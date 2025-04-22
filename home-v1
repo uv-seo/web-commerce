@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="title" content="Ultra Voucher: Aplikasi Voucher Diskon Setiap Hari" />
+    <meta name="description" content="Ultra Voucher, aplikasi voucher diskon harga termurah setiap hari. Transaksi aman, hemat setiap saat, redeem di mana saja!" />
+	<meta name="keyword" content="Ultra Voucher">
+	<meta name="author" content="Ultra Voucher">
+    <meta name="publisher" content="PT. Trimegah Karya Pratama">   
+    <meta name="robots" content="index,follow">	
+	<meta property="og:title" content="Ultra Voucher: Aplikasi Voucher Diskon Setiap Hari" />
+    <meta property="og:description" content="Ultra Voucher, aplikasi voucher diskon harga termurah setiap hari. Transaksi aman, hemat setiap saat, redeem di mana saja!" />
+    <meta property="og:url" content="https://ultravoucher.co.id/" />
+    <meta property="og:type" content="document" />
+    <meta property="og:image" content="https://ultravoucher.co.id/favicon.svg" />
+    <meta property="twitter:title" content="Ultra Voucher: Aplikasi Voucher Diskon Setiap Hari" />
+    <meta property="twitter:description" content="Ultra Voucher, aplikasi voucher diskon harga termurah setiap hari. Transaksi aman, hemat setiap saat, redeem di mana saja!" />
+    <meta property="twitter:image" content="https://ultravoucher.co.id/favicon.svg" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@ultra_voucher" /> 
+	<link rel="canonical" href="https://ultravoucher.co.id/"/>
+    <title>Ultra Voucher - Dapatkan diskon voucher hingga 85%</title>
+    <style>
+        :root {
+            --primary-color: #00a447;
+            --primary-light: #e8f5e9;
+            --text-primary: #333;
+            --text-secondary: #757575;
+            --bg-color: #f5f5f5;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --orange: #ff9800;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 20px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 15px;
+            --spacing-lg: 20px;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            max-width: 100%;
+            overflow-x: hidden;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 36px;
+            height: 36px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            flex: 1;
+        }
+        
+        .btn-buka {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .search-bar {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            flex: 1;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            background-color: transparent;
+        }
+        
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .icon-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .user-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .user-details {
+            flex: 1;
+        }
+        
+        .user-greeting {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+        
+        .user-subtext {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .login-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 10px 24px;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .feature-row {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 10px;
+            background-color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+        }
+        
+        .feature-name {
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .banner-container {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .banner-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .banner-slide {
+            display: none;
+            width: 100%;
+            text-decoration: none;
+        }
+        
+        .banner-slide.active {
+            display: block;
+        }
+        
+        .banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .dot-indicators {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        
+        .dot-link {
+            text-decoration: none;
+            margin: 0 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: var(--primary-color);
+            width: 24px;
+            border-radius: 4px;
+        }
+        
+        .tab-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .tab {
+            padding: 10px 15px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            background-color: var(--bg-color);
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+            font-weight: bold;
+            background-color: var(--white);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            background-color: var(--white);
+            padding: 15px 10px;
+        }
+        
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: var(--radius-md);
+        }
+        
+        .category-name {
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10px;
+            font-weight: bold;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .section-link {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .voucher-container {
+            display: flex;
+            padding: 10px;
+            overflow-x: auto;
+            gap: 15px;
+            scrollbar-width: thin;
+            -ms-overflow-style: none;
+        }
+        
+        .voucher-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .voucher-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+        
+        .voucher-card {
+            min-width: 180px;
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .voucher-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .voucher-content {
+            padding: 10px;
+        }
+        
+        .voucher-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .voucher-price {
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+        
+        .food-container {
+            display: flex;
+            padding: 0 10px;
+            overflow-x: auto;
+            gap: 15px;
+            scrollbar-width: thin;
+            -ms-overflow-style: none;
+        }
+        
+        .food-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .food-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+        
+        .food-card {
+            min-width: 150px;
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .food-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--white);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .food-content {
+            padding: 10px;
+            width: 150px;
+        }
+        
+        .food-title, .food-vendor {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background-color: #e7f7eb;
+            color: var(--primary-color);
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+        
+        .artikel-container {
+            padding: 0 10px;
+            margin-bottom: 100px; /* Increased bottom margin to see full card of 3rd article */
+        }
+        
+        .artikel-card {
+            display: flex;
+            background-color: var(--white);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .artikel-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+        }
+        
+        .artikel-content {
+            flex: 1;
+        }
+        
+        .artikel-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        
+        .artikel-date {
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .artikel-date img {
+            margin-right: 5px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--white);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid var(--border-color);
+            z-index: 10;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+        
+        .nav-item.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-icon {
+            margin-bottom: 4px;
+        }
+        
+        /* Media Queries for Responsive Design */
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .feature-name {
+                font-size: 12px;
+            }
+        }
+        
+        @media (min-width: 481px) and (max-width: 768px) {
+            .voucher-container, .food-container {
+                padding: 10px 20px;
+            }
+            
+            .artikel-container {
+                padding: 0 20px;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+        
+        /* Focus styles for accessibility */
+        a:focus, button:focus, input:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo" aria-label="Ultra Voucher Logo">
+                    <img src="/api/placeholder/24/24" alt="" role="presentation" />
+                </div>
+                <div class="logo-text">
+                    <div style="font-size: 14px; font-weight: bold;">Dapatkan diskon voucher hingga 85%</div>
+                    <div style="font-size: 12px;">Download aplikasi Ultra Voucher</div>
+                </div>
+            </div>
+            <a href="/buka" class="btn-buka" aria-label="Buka aplikasi Ultra Voucher">BUKA</a>
+        </header>
+        
+        <!-- Search and Icons -->
+        <div class="search-container">
+            <div class="search-bar">
+                <img src="/api/placeholder/20/20" alt="" role="presentation" />
+                <input type="text" placeholder="Cari di Ultra Voucher" aria-label="Cari di Ultra Voucher" />
+            </div>
+            <div class="icon-group">
+                <a href="/promo" class="icon-container" aria-label="Lihat Promo">
+                    <img src="/api/placeholder/24/24" alt="" />
+                </a>
+                <a href="/notifications" class="icon-container" aria-label="Notifikasi">
+                    <img src="/api/placeholder/24/24" alt="" />
+                </a>
+                <a href="/cart" class="icon-container" aria-label="Keranjang Belanja">
+                    <img src="/api/placeholder/24/24" alt="" />
+                </a>
+            </div>
+        </div>
+        
+        <!-- User Info -->
+        <div class="user-info">
+            <div class="user-avatar" aria-hidden="true">
+                <img src="/api/placeholder/32/32" alt="" />
+            </div>
+            <div class="user-details">
+                <div class="user-greeting">Hello Ultranian</div>
+                <div class="user-subtext">Let's join, make it more exciting</div>
+            </div>
+            <a href="/login" class="login-btn">Login</a>
+        </div>
+        
+        <!-- Features -->
+        <div class="feature-row">
+            <a href="/favorit" class="feature-item">
+                <img src="/api/placeholder/50/50" alt="" class="feature-icon" />
+                <span class="feature-name">Favorit</span>
+            </a>
+            <a href="/emas" class="feature-item">
+                <img src="/api/placeholder/50/50" alt="" class="feature-icon" />
+                <span class="feature-name">Emas</span>
+            </a>
+            <a href="/hadiah" class="feature-item">
+                <img src="/api/placeholder/50/50" alt="" class="feature-icon" />
+                <span class="feature-name">Hadiah</span>
+            </a>
+            <a href="/ufood" class="feature-item">
+                <img src="/api/placeholder/50/50" alt="" class="feature-icon" />
+                <span class="feature-name">UFood</span>
+            </a>
+        </div>
+        
+        <!-- Banner Slider -->
+        <div class="banner-container">
+            <h2 class="visually-hidden">Promo Terbaru</h2>
+            <div class="banner-slider" aria-live="polite">
+                <!-- Banner 1 - Flash Sale -->
+                <a href="/promo/flash-sale" class="banner-slide active" id="slide-1" aria-labelledby="banner-1-title">
+                    <img src="/api/placeholder/720/200" alt="" class="banner" />
+                    <span id="banner-1-title" class="sr-only">Flash Sale - Diskon 30% untuk Gokhana, Raa Cha, dan Segari</span>
+                </a>
+                
+                <!-- Banner 2 - Shop & Fly -->
+                <a href="/promo/shop-and-fly" class="banner-slide" id="slide-2" aria-labelledby="banner-2-title">
+                    <img src="/api/placeholder/720/200" alt="" class="banner" />
+                    <span id="banner-2-title" class="sr-only">Shop & Fly - Belanja MAP Gift Voucher, Dapat GarudaMiles!</span>
+                </a>
+                
+                <!-- Banner 3 - Referral Get Point -->
+                <a href="/promo/referral" class="banner-slide" id="slide-3" aria-labelledby="banner-3-title">
+                    <img src="/api/placeholder/720/200" alt="" class="banner" />
+                    <span id="banner-3-title" class="sr-only">Referral Get Point - Ajak Temanmu Daftar di Ultra Voucher dan dapatkan Extra Point Up To 2000</span>
+                </a>
+                
+                <!-- Banner 4 - Cashback UOB TMRW -->
+                <a href="/promo/cashback-uob" class="banner-slide" id="slide-4" aria-labelledby="banner-4-title">
+                    <img src="/api/placeholder/720/200" alt="" class="banner" />
+                    <span id="banner-4-title" class="sr-only">Dapatkan Cashback Ultra Value Hingga Rp 2.000.000 dengan UOB TMRW</span>
+                </a>
+                
+                <!-- Banner 5 - MAP Shopping -->
+                <a href="/promo/map-shopping" class="banner-slide" id="slide-5" aria-labelledby="banner-5-title">
+                    <img src="/api/placeholder/720/200" alt="" class="banner" />
+                    <span id="banner-5-title" class="sr-only">Pakai Ultra Voucher Shopping Jadi Lebih Hemat dengan MAP Gift Voucher</span>
+                </a>
+            </div>
+            
+            <!-- Dot indicators with links -->
+            <div class="dot-indicators" role="tablist" aria-label="Banner navigation">
+                <a href="#slide-1" class="dot-link" role="tab" aria-controls="slide-1" aria-selected="true" onclick="activateSlide(1); return false;">
+                    <span class="dot active" id="dot-1"></span>
+                    <span class="sr-only">Banner 1</span>
+                </a>
+                <a href="#slide-2" class="dot-link" role="tab" aria-controls="slide-2" aria-selected="false" onclick="activateSlide(2); return false;">
+                    <span class="dot" id="dot-2"></span>
+                    <span class="sr-only">Banner 2</span>
+                </a>
+                <a href="#slide-3" class="dot-link" role="tab" aria-controls="slide-3" aria-selected="false" onclick="activateSlide(3); return false;">
+                    <span class="dot" id="dot-3"></span>
+                    <span class="sr-only">Banner 3</span>
+                </a>
+                <a href="#slide-4" class="dot-link" role="tab" aria-controls="slide-4" aria-selected="false" onclick="activateSlide(4); return false;">
+                    <span class="dot" id="dot-4"></span>
+                    <span class="sr-only">Banner 4</span>
+                </a>
+                <a href="#slide-5" class="dot-link" role="tab" aria-controls="slide-5" aria-selected="false" onclick="activateSlide(5); return false;">
+                    <span class="dot" id="dot-5"></span>
+                    <span class="sr-only">Banner 5</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="tab-container" role="tablist">
+            <button class="tab active" id="voucher-tab" role="tab" aria-selected="true" aria-controls="voucher-content">Voucher</button>
+            <button class="tab" id="topup-tab" role="tab" aria-selected="false" aria-controls="topup-content">Topup & Tagihan</button>
+        </div>
+        
+        <!-- Voucher Category Grid -->
+        <div class="category-grid" id="voucher-content" role="tabpanel" aria-labelledby="voucher-tab">
+            <a href="https://ultravoucher.co.id/category/brand?id_category=36&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #e8f5e9;" />
+                <span class="category-name">All</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=22&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #fff3e0;" />
+                <span class="category-name">F&B</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=29&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #e3f2fd;" />
+                <span class="category-name">Activity</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=27&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #ffe0b2;" />
+                <span class="category-name">Apps</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=21&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #ffebee;" />
+                <span class="category-name">Beauty</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=38&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #e0f7fa;" />
+                <span class="category-name">Experience</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=16&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #f3e5f5;" />
+                <span class="category-name">Game</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=24&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #e8f5e9;" />
+                <span class="category-name">Health</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=23&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #fff9c4;" />
+                <span class="category-name">Invest</span>
+            </a>
+            <a href="https://ultravoucher.co.id/category/brand?id_category=28&sort_by=count_transaction&descending=true" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #ffcdd2;" />
+                <span class="category-name">Retail</span>
+            </a>
+        </div>
+        
+        <!-- Topup & Tagihan Category Grid -->
+        <div class="category-grid" id="topup-content" role="tabpanel" aria-labelledby="topup-tab" style="display: none;">
+            <a href="/topup/pulsa" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #e0f2f1;" />
+                <span class="category-name">Pulsa</span>
+            </a>
+            <a href="/topup/e-wallet" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #fff9c4;" />
+                <span class="category-name">E-Wallet</span>
+            </a>
+            <a href="/topup/paket-data" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #e3f2fd;" />
+                <span class="category-name">Paket Data</span>
+            </a>
+            <a href="/topup/pln" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #fff3e0;" />
+                <span class="category-name">PLN</span>
+            </a>
+            <a href="/topup/bpjs" class="category-item">
+                <img src="/api/placeholder/40/40" alt="" class="category-icon" style="background-color: #ffebee;" />
+                <span class="category-name">BPJS</span>
+            </a>
+        </div>
+        
+        <!-- MAP GIFT VOUCHER -->
+        <section aria-labelledby="map-voucher-title">
+            <div class="section-header">
+                <h2 class="section-title" id="map-voucher-title">MAP GIFT VOUCHER FREE GARUDA MILES</h2>
+                <a href="/map-vouchers" class="section-link" aria-label="Lihat semua voucher MAP">
+                    <img src="/api/placeholder/20/20" alt="Arrow Right" />
+                </a>
+            </div>
+            
+            <div class="voucher-container">
+                <a href="/voucher/platinum-package" class="voucher-card">
+                    <img src="/api/placeholder/180/120" alt="" class="voucher-image" />
+                    <div class="voucher-content">
+                        <div class="voucher-title">MAP Gift voucher Platinum Package</div>
+                        <div class="voucher-price">Rp 9.880.000</div>
+                        <div class="original-price">Rp 10.400.000</div>
+                    </div>
+                </a>
+                
+                <a href="/voucher/gold-package" class="voucher-card">
+                    <img src="/api/placeholder/180/120" alt="" class="voucher-image" />
+                    <div class="voucher-content">
+                        <div class="voucher-title">MAP Gift voucher Gold Package</div>
+                        <div class="voucher-price">Rp 4.935.000</div>
+                        <div class="original-price">Rp 5.200.000</div>
+                    </div>
+                </a>
+                
+                <a href="/voucher/silver-package" class="voucher-card">
+                    <img src="/api/placeholder/180/120" alt="" class="voucher-image" />
+                    <div class="voucher-content">
+                        <div class="voucher-title">MAP Gift voucher Silver Package</div>
+                        <div class="voucher-price">Rp 990.000</div>
+                        <div class="original-price">Rp 1.045.000</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+		
+		<!-- UFOOD: FOOD DELIVERY -->
+        <section aria-labelledby="ufood-title">
+            <div class="section-header">
+                <h2 class="section-title" id="ufood-title">UFood: Food Delivery</h2>
+                <a href="/ufood" class="section-link" aria-label="Lihat semua restoran">
+                    <img src="/api/placeholder/20/20" alt="Arrow Right" />
+                </a>
+            </div>
+            
+            <div class="food-container">
+                <a href="/restaurant/nannys-pavilion" class="food-card">
+                    <div class="food-image-container" style="position: relative;">
+                        <img src="/api/placeholder/150/150" alt="" class="food-image" />
+                        <button class="favorite-btn" aria-label="Tambahkan ke favorit">
+                            <img src="/api/placeholder/16/16" alt="" />
+                        </button>
+                    </div>
+                    <div class="food-content">
+                        <div class="food-title">Nanny's Pavilion By</div>
+                        <div class="food-vendor">Atlima Group</div>
+                        <div class="discount-badge">Disc s.d 24 %</div>
+                    </div>
+                </a>
+                
+                <a href="/restaurant/karnivor" class="food-card">
+                    <div class="food-image-container" style="position: relative;">
+                        <img src="/api/placeholder/150/150" alt="" class="food-image" />
+                        <button class="favorite-btn" aria-label="Tambahkan ke favorit">
+                            <img src="/api/placeholder/16/16" alt="" />
+                        </button>
+                    </div>
+                    <div class="food-content">
+                        <div class="food-title">Karnivor By Atlima</div>
+                        <div class="food-vendor">Group</div>
+                        <div class="discount-badge">Disc s.d 10 %</div>
+                    </div>
+                </a>
+                
+                <a href="/restaurant/kafe-betawi" class="food-card">
+                    <div class="food-image-container" style="position: relative;">
+                        <img src="/api/placeholder/150/150" alt="" class="food-image" />
+                        <button class="favorite-btn" aria-label="Tambahkan ke favorit">
+                            <img src="/api/placeholder/16/16" alt="" />
+                        </button>
+                    </div>
+                    <div class="food-content">
+                        <div class="food-title">Kafe Betawi</div>
+                        <div class="discount-badge">Disc s.d 8 %</div>
+                    </div>
+                </a>
+                
+                <a href="/restaurant/kopi-kotak" class="food-card">
+                    <div class="food-image-container" style="position: relative;">
+                        <img src="/api/placeholder/150/150" alt="" class="food-image" />
+                        <button class="favorite-btn" aria-label="Tambahkan ke favorit">
+                            <img src="/api/placeholder/16/16" alt="" />
+                        </button>
+                    </div>
+                    <div class="food-content">
+                        <div class="food-title">Kopi Kotak</div>
+                        <div class="discount-badge">Disc s.d 15 %</div>
+                    </div>
+                </a>
+                
+                <a href="/restaurant/restaurant-5" class="food-card">
+                    <div class="food-image-container" style="position: relative;">
+                        <img src="/api/placeholder/150/150" alt="" class="food-image" />
+                        <button class="favorite-btn" aria-label="Tambahkan ke favorit">
+                            <img src="/api/placeholder/16/16" alt="" />
+                        </button>
+                    </div>
+                    <div class="food-content">
+                        <div class="food-title">Restaurant 5</div>
+                        <div class="discount-badge">Disc s.d 5 %</div>
+                    </div>
+                </a>
+                
+                <a href="/restaurant/restaurant-6" class="food-card">
+                    <div class="food-image-container" style="position: relative;">
+                        <img src="/api/placeholder/150/150" alt="" class="food-image" />
+                        <button class="favorite-btn" aria-label="Tambahkan ke favorit">
+                            <img src="/api/placeholder/16/16" alt="" />
+                        </button>
+                    </div>
+                    <div class="food-content">
+                        <div class="food-title">Restaurant 6</div>
+                        <div class="discount-badge">Disc s.d 12 %</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- ARTIKEL -->
+        <section aria-labelledby="artikel-title">
+            <div class="section-header">
+                <h2 class="section-title" id="artikel-title">Artikel</h2>
+                <a href="/artikel" class="section-link" aria-label="Lihat semua artikel">
+                    <img src="/api/placeholder/20/20" alt="Arrow Right" />
+                </a>
+            </div>
+            
+            <div class="artikel-container">
+                <a href="/artikel/pembelian-voucher-digital" class="artikel-card">
+                    <img src="/api/placeholder/80/80" alt="" class="artikel-image" />
+                    <div class="artikel-content">
+                        <h3 class="artikel-title">Pembelian Voucher Digital Kini Lebih Praktis Lewat Aplikasi MyMRT</h3>
+                        <div class="artikel-date">
+                            <img src="/api/placeholder/16/16" alt="" style="vertical-align: middle;" />
+                            <span>23 Sep 2024</span>
+                            <span style="margin: 0 5px;">•</span>
+                            <span class="artikel-source">1 menit untuk membaca</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/artikel/kerjasama-ultra-voucher-vivo" class="artikel-card">
+                    <img src="/api/placeholder/80/80" alt="" class="artikel-image" />
+                    <div class="artikel-content">
+                        <h3 class="artikel-title">Kerjasama Ultra Voucher Dan Vivo : Dapatkan Kupon 50ribu Untuk Pembelian Seri Vivo V40</h3>
+                        <div class="artikel-date">
+                            <img src="/api/placeholder/16/16" alt="" style="vertical-align: middle;" />
+                            <span>12 Sep 2024</span>
+                            <span style="margin: 0 5px;">•</span>
+                            <span class="artikel-source">1 menit untuk membaca</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/artikel/sekarang-kamu-bisa-beli-voucher" class="artikel-card">
+                    <img src="/api/placeholder/80/80" alt="" class="artikel-image" />
+                    <div class="artikel-content">
+                        <h3 class="artikel-title">Sekarang Kamu Bisa Beli Voucher Belanja Digital Di Livin Sukha Mandiri!</h3>
+                        <div class="artikel-date">
+                            <img src="/api/placeholder/16/16" alt="" style="vertical-align: middle;" />
+                            <span>10 Sep 2024</span>
+                            <span style="margin: 0 5px;">•</span>
+                            <span class="artikel-source">1 menit untuk membaca</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- NAVIGATION BAR -->
+        <nav class="navigation" aria-label="Main Navigation">
+            <a href="/beranda" class="nav-item active" aria-current="page">
+                <img src="/api/placeholder/24/24" alt="" class="nav-icon" />
+                <span>Beranda</span>
+            </a>
+            <a href="/artikel" class="nav-item">
+                <img src="/api/placeholder/24/24" alt="" class="nav-icon" />
+                <span>Artikel</span>
+            </a>
+            <a href="/pesanan" class="nav-item">
+                <img src="/api/placeholder/24/24" alt="" class="nav-icon" />
+                <span>Pesanan</span>
+            </a>
+            <a href="/akun" class="nav-item">
+                <img src="/api/placeholder/24/24" alt="" class="nav-icon" />
+                <span>Akun</span>
+            </a>
+        </nav>
+    </div>
+    
+    <script>
+        // Banner slider functionality
+        function activateSlide(slideNumber) {
+            // Hide all slides
+            const slides = document.querySelectorAll('.banner-slide');
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.setAttribute('aria-hidden', 'true');
+            });
+            
+            // Deactivate all dots and tabs
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            const dotLinks = document.querySelectorAll('.dot-link');
+            dotLinks.forEach(link => {
+                link.setAttribute('aria-selected', 'false');
+            });
+            
+            // Activate selected slide and dot
+            const activeSlide = document.getElementById('slide-' + slideNumber);
+            activeSlide.classList.add('active');
+            activeSlide.setAttribute('aria-hidden', 'false');
+            
+            const activeDot = document.getElementById('dot-' + slideNumber);
+            activeDot.classList.add('active');
+            
+            const activeDotLink = activeDot.closest('.dot-link');
+            activeDotLink.setAttribute('aria-selected', 'true');
+        }
+        
+        // Pause auto-rotation when user prefers reduced motion
+        let slideInterval;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (!prefersReducedMotion) {
+            // Auto-rotate banners every 5 seconds
+            let currentSlide = 1;
+            slideInterval = setInterval(function() {
+                currentSlide = currentSlide % 5 + 1;
+                activateSlide(currentSlide);
+            }, 5000);
+        }
+        
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const voucherTab = document.getElementById('voucher-tab');
+            const topupTab = document.getElementById('topup-tab');
+            const voucherContent = document.getElementById('voucher-content');
+            const topupContent = document.getElementById('topup-content');
+            
+            voucherTab.addEventListener('click', function() {
+                voucherContent.style.display = 'grid';
+                topupContent.style.display = 'none';
+                voucherTab.classList.add('active');
+                topupTab.classList.remove('active');
+                voucherTab.setAttribute('aria-selected', 'true');
+                topupTab.setAttribute('aria-selected', 'false');
+            });
+            
+            topupTab.addEventListener('click', function() {
+                voucherContent.style.display = 'none';
+                topupContent.style.display = 'grid';
+                voucherTab.classList.remove('active');
+                topupTab.classList.add('active');
+                voucherTab.setAttribute('aria-selected', 'false');
+                topupTab.setAttribute('aria-selected', 'true');
+            });
+            
+            // Add keyboard navigation for tabs
+            voucherTab.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    topupTab.focus();
+                    topupTab.click();
+                }
+            });
+            
+            topupTab.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    voucherTab.focus();
+                    voucherTab.click();
+                }
+            });
+            
+            // Ensure scrollable containers work with keyboard
+            document.querySelectorAll('.voucher-container, .food-container').forEach(container => {
+                container.tabIndex = 0;
+                container.addEventListener('keydown', function(e) {
+                    // Horizontal scrolling with arrow keys
+                    if (e.key === 'ArrowRight') {
+                        this.scrollLeft += 100;
+                        e.preventDefault();
+                    } else if (e.key === 'ArrowLeft') {
+                        this.scrollLeft -= 100;
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
