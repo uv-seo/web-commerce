@@ -1,0 +1,850 @@
+.add-button {
+            background-color: #009245;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Voucher - Nanny's Pavilion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .top-banner {
+            background-color: #009245;
+            color: white;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .ultra-logo {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: white;
+            color: #009245;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .promo-text {
+            font-size: 13px;
+            line-height: 1.3;
+        }
+        
+        .promo-text strong {
+            font-size: 14px;
+        }
+        
+        .buka-button-link {
+            text-decoration: none;
+        }
+        
+        .buka-button {
+            background-color: white;
+            color: #009245;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        header {
+            background-color: white;
+            color: black;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .cart-icon-link {
+            text-decoration: none;
+            display: block;
+        }
+        
+        .back-button {
+            display: flex;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .header-title {
+            font-weight: bold;
+            font-size: 16px;
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-left: 15px;
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #FF5252;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+        
+        .brand-header {
+            width: 100%;
+            position: relative;
+        }
+        
+        .brand-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .brand-logo {
+            position: absolute;
+            bottom: -20px;
+            left: 15px;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            border: 2px solid white;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .brand-logo img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+        
+        .brand-info {
+            padding: 25px 15px 15px;
+            background-color: white;
+        }
+        
+        .brand-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .brand-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .discount-badge {
+            background-color: #E3F2E9;
+            color: #2BB673;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-size: 12px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .brand-thumbnail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .thumbnail-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .thumbnail-details {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .description-section {
+            margin-top: 15px;
+            background-color: white;
+            padding: 15px;
+        }
+        
+        .tab-navigation {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            padding: 10px 15px;
+            color: #757575;
+            font-size: 14px;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .tab.active {
+            color: #FFA500;
+            font-weight: bold;
+            border-bottom: 3px solid #FFA500;
+        }
+        
+        .tab:not(.active) {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .description-content {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+        }
+        
+        .outlet-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 15px 0 10px;
+            color: #555;
+        }
+        
+        .outlet-list, .terms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .outlet-list li, .terms-list li {
+            margin-bottom: 5px;
+            color: #666;
+        }
+        
+        .show-more {
+            color: #2BB673;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .voucher-section {
+            margin-top: 15px;
+            background-color: white;
+            padding: 15px;
+        }
+        
+        .voucher-title {
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .voucher-card {
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .voucher-inner {
+            padding: 15px;
+            display: flex;
+        }
+        
+        .voucher-thumb {
+            margin-right: 15px;
+        }
+        
+        .voucher-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        
+        .voucher-details {
+            flex-grow: 1;
+        }
+        
+        .voucher-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .voucher-price-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .voucher-price {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .voucher-original-price {
+            font-size: 12px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .voucher-sold {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sold-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            opacity: 0.7;
+        }
+        
+        .voucher-divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 0 15px;
+        }
+        
+        .voucher-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+        }
+        
+        .favorite-button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100px;
+            height: 36px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 36px;
+            background: #f5f5f5;
+            border: none;
+            font-size: 18px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 36px;
+            border: none;
+            border-left: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .checkout-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            display: none;
+        }
+        
+        .checkout-summary {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+        
+        .checkout-total {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .checkout-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .checkout-button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .add-to-cart-button {
+            background: white;
+            color: #009245;
+            border: 1px solid #009245;
+        }
+        
+        .buy-button {
+            background: #009245;
+            color: white;
+        }
+        
+        .ufood-promo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(128, 0, 128, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div style="display: flex; align-items: center;">
+            <div class="ultra-logo">U</div>
+            <div class="promo-text">
+                <strong>Dapatkan diskon voucher hingga 85%</strong><br>
+                Download aplikasi Ultra Voucher
+            </div>
+        </div>
+        <a href="https://ultravoucher.co.id/app" class="buka-button-link">
+            <button class="buka-button">BUKA</button>
+        </a>
+    </div>
+
+    <header>
+        <div style="display: flex; align-items: center;">
+            <a href="#" class="back-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 19L8 12L15 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <div class="header-title">Detail Brand</div>
+        </div>
+        
+        <a href="https://ultravoucher.co.id/cart" class="cart-icon-link">
+            <div class="cart-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </a>
+    </header>
+    
+    <div class="brand-header">
+        <img src="/api/placeholder/400/200" alt="Nanny's Pavilion" class="brand-image">
+        <div class="ufood-promo">
+            <span>Nikmati Pesan Antar<br>Makanan melalui UFOOD<br>di Aplikasi Ultra Voucher</span>
+        </div>
+    </div>
+    
+    <div class="brand-info">
+        <div class="brand-thumbnail">
+            <img src="/api/placeholder/60/60" alt="Nanny's Logo" class="thumbnail-image">
+            <div class="thumbnail-details">
+                <h1 class="brand-name">Nanny's Pavilion By Altima Group</h1>
+                <button class="favorite-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="discount-badge">Disc s.d 24 %</div>
+    </div>
+    
+    <div class="description-section">
+        <div class="tab-navigation">
+            <a href="#deskripsi" class="tab active" id="deskripsiTab" onclick="showTab('deskripsi')">Deskripsi</a>
+            <a href="#syarat" class="tab" id="syaratTab" onclick="showTab('syarat')">Syarat & Ketentuan</a>
+        </div>
+        
+        <div id="deskripsi" class="tab-content active">
+            <div class="description-content">
+                <p id="deskripsiShort">Didirikan sejak 23 Maret 2009, Nanny's Pavilion pertama kali membuka outletnya di Bandung, Indonesia. Nanny's Pavilion merupakan restoran panekuk berkonsep French American. Tradisi dari French American family...</p>
+                
+                <div id="deskripsiExpanded" style="display: none;">
+                    <p>Didirikan sejak 23 Maret 2009, Nanny's Pavilion pertama kali membuka outletnya di Bandung, Indonesia. Nanny's Pavilion merupakan restoran panekuk berkonsep French American. Tradisi dari French American family sangat diikuti oleh Nanny's Pavilion, oleh karena itu rutinitasnya mencerminkan kehangatan, nyaman, dan suasana akrab.</p>
+                    
+                    <h3 class="outlet-title">Outlet Berlaku:</h3>
+                    <ol class="outlet-list">
+                        <li>Kota Kasablanka</li>
+                        <li>Central Park</li>
+                        <li>Pondok Indah Mall</li>
+                        <li>Lippo Mall Puri</li>
+                        <li>Cilandak Town Square</li>
+                        <li>Summarecon Mal Bekasi</li>
+                        <li>AEON BSD</li>
+                        <li>AEON Mall Tanjung Barat</li>
+                        <li>AEON Mall Sentul City</li>
+                        <li>Nanny's Pavilion, La Riviera - PIK 2</li>
+                        <li>Nanny's Pavilion, Agora</li>
+                        <li>Nanny's Pavilion, Lotte Shopping Avenue</li>
+                        <li>Nanny's Pavilion, AEON Mall Deltamas</li>
+                        <li>Nanny's Pavilion, Ciumbuileuit Bandung</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="show-more" id="toggleDeskripsi" onclick="toggleContent('deskripsi')">Tampilkan Semua</div>
+        </div>
+        
+        <div id="syarat" class="tab-content">
+            <div class="description-content">
+                <div id="syaratShort">
+                    <ol class="terms-list">
+                        <li>Voucher dapat ditukarkan selama jam operasional berlangsung</li>
+                        <li>Voucher berlaku setiap hari</li>
+                        <li>Voucher hanya berlaku untuk dine in & take away</li>
+                    </ol>
+                </div>
+                
+                <div id="syaratExpanded" style="display: none;">
+                    <ol class="terms-list">
+                        <li>Voucher dapat ditukarkan selama jam operasional berlangsung</li>
+                        <li>Voucher berlaku setiap hari</li>
+                        <li>Voucher hanya berlaku untuk dine in & take away</li>
+                        <li>Voucher sudah termasuk tax & service</li>
+                        <li>Voucher tidak dapat digabungkan dengan promosi lainnya</li>
+                        <li>Voucher berlaku 30 hari setelah pembelian</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="show-more" id="toggleSyarat" onclick="toggleContent('syarat')">Tampilkan Semua</div>
+        </div>
+    </div>
+    
+    <div class="voucher-section">
+        <h2 class="voucher-title">Voucher Digital</h2>
+        
+        <div class="voucher-card">
+            <div class="voucher-inner">
+                <div class="voucher-thumb">
+                    <img src="/api/placeholder/70/70" alt="Nanny's Pavilion Voucher" class="voucher-image">
+                </div>
+                <div class="voucher-details">
+                    <div class="voucher-name">Nanny's Pavilion Rp. 50.000</div>
+                    <div class="voucher-price-container">
+                        <div class="voucher-price">Rp 38.000</div>
+                        <div class="voucher-original-price">Rp 50.000</div>
+                    </div>
+                    <div class="voucher-sold">
+                        <img src="/api/placeholder/16/16" alt="Sold icon" class="sold-icon">
+                        <span>1338 terjual</span>
+                    </div>
+                </div>
+            </div>
+            <div class="voucher-divider"></div>
+            <div class="voucher-actions">
+                <button class="favorite-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="add-button" onclick="addToCart('voucher1', 'Nanny\'s Pavilion Rp. 50.000', 38000, 50000)">Tambah</button>
+                <div class="quantity-selector" id="quantity-voucher1" style="display: none;">
+                    <button class="quantity-btn minus" onclick="decreaseQuantity('voucher1')">−</button>
+                    <input type="text" class="quantity-input" id="qty-voucher1" value="1" readonly>
+                    <button class="quantity-btn plus" onclick="increaseQuantity('voucher1')">+</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="voucher-card">
+            <div class="voucher-inner">
+                <div class="voucher-thumb">
+                    <img src="/api/placeholder/70/70" alt="Nanny's Pavilion Voucher" class="voucher-image">
+                </div>
+                <div class="voucher-details">
+                    <div class="voucher-name">Nanny's Pavilion Rp. 100.000</div>
+                    <div class="voucher-price-container">
+                        <div class="voucher-price">Rp 76.000</div>
+                        <div class="voucher-original-price">Rp 100.000</div>
+                    </div>
+                    <div class="voucher-sold">
+                        <img src="/api/placeholder/16/16" alt="Sold icon" class="sold-icon">
+                        <span>3103 terjual</span>
+                    </div>
+                </div>
+            </div>
+            <div class="voucher-divider"></div>
+            <div class="voucher-actions">
+                <button class="favorite-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="add-button" id="btn-voucher2" onclick="addToCart('voucher2', 'Nanny\'s Pavilion Rp. 100.000', 76000, 100000)">Tambah</button>
+                <div class="quantity-selector" id="quantity-voucher2" style="display: none;">
+                    <button class="quantity-btn minus" onclick="decreaseQuantity('voucher2')">−</button>
+                    <input type="text" class="quantity-input" id="qty-voucher2" value="1" readonly>
+                    <button class="quantity-btn plus" onclick="increaseQuantity('voucher2')">+</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="voucher-card">
+            <div class="voucher-inner">
+                <div class="voucher-thumb">
+                    <img src="/api/placeholder/70/70" alt="Nanny's Pavilion Voucher" class="voucher-image">
+                </div>
+                <div class="voucher-details">
+                    <div class="voucher-name">Nanny's Pavilion Rp. 250.000</div>
+                    <div class="voucher-price-container">
+                        <div class="voucher-price">Rp 190.000</div>
+                        <div class="voucher-original-price">Rp 250.000</div>
+                    </div>
+                    <div class="voucher-sold">
+                        <img src="/api/placeholder/16/16" alt="Sold icon" class="sold-icon">
+                        <span>3253 terjual</span>
+                    </div>
+                </div>
+            </div>
+            <div class="voucher-divider"></div>
+            <div class="voucher-actions">
+                <button class="favorite-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="add-button" id="btn-voucher3" onclick="addToCart('voucher3', 'Nanny\'s Pavilion Rp. 250.000', 190000, 250000)">Tambah</button>
+                <div class="quantity-selector" id="quantity-voucher3" style="display: none;">
+                    <button class="quantity-btn minus" onclick="decreaseQuantity('voucher3')">−</button>
+                    <input type="text" class="quantity-input" id="qty-voucher3" value="1" readonly>
+                    <button class="quantity-btn plus" onclick="increaseQuantity('voucher3')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkout-bar" id="checkout-bar">
+        <div class="checkout-summary">
+            <div class="checkout-item-count" id="checkout-count">1 item(s)</div>
+            <div class="checkout-total" id="checkout-total">Rp 190.000</div>
+        </div>
+        <div class="checkout-actions">
+            <a href="#" class="checkout-button add-to-cart-button">Tambah ke cart</a>
+            <a href="#" class="checkout-button buy-button">Beli</a>
+        </div>
+    </div>
+    
+    <!-- Extra space to ensure content isn't hidden behind the checkout bar -->
+    <div class="bottom-spacer"></div>
+
+    <script>
+        // Tab switching functionality
+        function showTab(tabId) {
+            // Prevent default link behavior
+            event.preventDefault();
+            
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to selected tab
+            if (tabId === 'deskripsi') {
+                document.getElementById('deskripsiTab').classList.add('active');
+            } else {
+                document.getElementById('syaratTab').classList.add('active');
+            }
+        }
+        
+        // Content toggle functionality
+        function toggleContent(contentType) {
+            if (contentType === 'deskripsi') {
+                const shortContent = document.getElementById('deskripsiShort');
+                const expandedContent = document.getElementById('deskripsiExpanded');
+                const toggleButton = document.getElementById('toggleDeskripsi');
+                
+                if (expandedContent.style.display === 'none') {
+                    // Show expanded content
+                    shortContent.style.display = 'none';
+                    expandedContent.style.display = 'block';
+                    toggleButton.textContent = 'Tampilkan Lebih Sedikit';
+                } else {
+                    // Show short content
+                    shortContent.style.display = 'block';
+                    expandedContent.style.display = 'none';
+                    toggleButton.textContent = 'Tampilkan Semua';
+                }
+            } else if (contentType === 'syarat') {
+                const shortContent = document.getElementById('syaratShort');
+                const expandedContent = document.getElementById('syaratExpanded');
+                const toggleButton = document.getElementById('toggleSyarat');
+                
+                if (expandedContent.style.display === 'none') {
+                    // Show expanded content
+                    shortContent.style.display = 'none';
+                    expandedContent.style.display = 'block';
+                    toggleButton.textContent = 'Tampilkan Lebih Sedikit';
+                } else {
+                    // Show short content
+                    shortContent.style.display = 'block';
+                    expandedContent.style.display = 'none';
+                    toggleButton.textContent = 'Tampilkan Semua';
+                }
+            }
+        }
+        
+        // Cart functionality
+        let cart = {};
+        
+        function addToCart(id, name, price, originalPrice) {
+            // If item already in cart, just show quantity selector
+            if (cart[id]) {
+                document.getElementById('btn-' + id).style.display = 'none';
+                document.getElementById('quantity-' + id).style.display = 'flex';
+                return;
+            }
+            
+            // Add to cart
+            cart[id] = {
+                id: id,
+                name: name,
+                price: price,
+                originalPrice: originalPrice,
+                quantity: 1
+            };
+            
+            // Hide the add button and show quantity selector
+            document.getElementById('btn-' + id).style.display = 'none';
+            document.getElementById('quantity-' + id).style.display = 'flex';
+            
+            // Update checkout bar
+            updateCheckoutBar();
+        }
+        
+        function decreaseQuantity(id) {
+            if (!cart[id]) return;
+            
+            if (cart[id].quantity > 1) {
+                cart[id].quantity--;
+                document.getElementById('qty-' + id).value = cart[id].quantity;
+            } else {
+                // Remove from cart
+                delete cart[id];
+                document.getElementById('btn-' + id).style.display = 'block';
+                document.getElementById('quantity-' + id).style.display = 'none';
+            }
+            
+            updateCheckoutBar();
+        }
+        
+        function increaseQuantity(id) {
+            if (!cart[id]) return;
+            
+            cart[id].quantity++;
+            document.getElementById('qty-' + id).value = cart[id].quantity;
+            updateCheckoutBar();
+        }
+        
+        function updateCheckoutBar() {
+            const checkoutBar = document.getElementById('checkout-bar');
+            const checkoutCount = document.getElementById('checkout-count');
+            const checkoutTotal = document.getElementById('checkout-total');
+            
+            // Calculate total items and price
+            let totalItems = 0;
+            let totalPrice = 0;
+            
+            Object.values(cart).forEach(item => {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
+            });
+            
+            // If no items, hide checkout bar
+            if (totalItems === 0) {
+                checkoutBar.style.display = 'none';
+                return;
+            }
+            
+            // Update display
+            checkoutCount.textContent = totalItems + ' item(s)';
+            checkoutTotal.textContent = 'Rp ' + totalPrice.toLocaleString('id-ID');
+            checkoutBar.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
